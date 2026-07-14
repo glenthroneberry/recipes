@@ -9,6 +9,7 @@
 <body>
   <header>
     <a href="{{ '/' | relative_url }}">&larr; All Recipes</a>
+    <a href="{{ '/planner.html' | relative_url }}">Meal Planner</a>
   </header>
 
   <main class="recipe">
@@ -24,6 +25,15 @@
     <div class="tags">
       {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
     </div>
+    {% endif %}
+
+    {% if page.ingredients %}
+    <h2>Ingredients</h2>
+    <ul class="ingredient-list">
+      {% for ing in page.ingredients %}
+      <li>{{ ing.amount }} {% if ing.unit != "whole" %}{{ ing.unit }}{% endif %} {{ ing.name }}</li>
+      {% endfor %}
+    </ul>
     {% endif %}
 
     <div class="content">

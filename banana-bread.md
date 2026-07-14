@@ -4,18 +4,32 @@ prep_time: 15 min
 cook_time: 60 min
 servings: 8
 tags: [dessert, baking]
+ingredients:
+  - name: ripe bananas
+    amount: 3
+    unit: whole
+  - name: melted butter
+    amount: 0.33
+    unit: cup
+  - name: sugar
+    amount: 0.5
+    unit: cup
+  - name: egg
+    amount: 1
+    unit: whole
+  - name: vanilla extract
+    amount: 1
+    unit: tsp
+  - name: baking soda
+    amount: 1
+    unit: tsp
+  - name: salt
+    amount: 1
+    unit: pinch
+  - name: all-purpose flour
+    amount: 1.5
+    unit: cup
 ---
-
-## Ingredients
-
-- 3 ripe bananas, mashed
-- 1/3 cup melted butter
-- 1/2 cup sugar
-- 1 egg, beaten
-- 1 tsp vanilla extract
-- 1 tsp baking soda
-- pinch of salt
-- 1 1/2 cups all-purpose flour
 
 ## Instructions
 
