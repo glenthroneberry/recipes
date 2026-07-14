@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }} · {{ site.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+  <header>
+    <a href="{{ '/' | relative_url }}">&larr; All Recipes</a>
+  </header>
+
+  <main class="recipe">
+    <h1>{{ page.title }}</h1>
+
+    <div class="meta">
+      {% if page.prep_time %}<span>Prep: {{ page.prep_time }}</span>{% endif %}
+      {% if page.cook_time %}<span>Cook: {{ page.cook_time }}</span>{% endif %}
+      {% if page.servings %}<span>Serves: {{ page.servings }}</span>{% endif %}
+    </div>
+
+    {% if page.tags %}
+    <div class="tags">
+      {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="content">
+      {{ content }}
+    </div>
+  </main>
+</body>
+</html>
