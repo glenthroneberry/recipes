@@ -28,6 +28,27 @@ a:hover {
   border-bottom: 1px solid #eee;
 }
 
+.recipe-section {
+  margin-bottom: 1.5rem;
+}
+.recipe-section h2 {
+  border-bottom: 2px solid #b1481b;
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+}
+
+.category-badge {
+  display: inline-block;
+  background: #b1481b;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  margin-right: 0.6rem;
+}
+
 .meta span {
   display: inline-block;
   margin-right: 1rem;
@@ -60,6 +81,14 @@ header {
 }
 
 /* Meal planner */
+.planner-section {
+  margin-bottom: 1.2rem;
+}
+.planner-section h3 {
+  font-size: 1rem;
+  color: #b1481b;
+  margin-bottom: 0.2rem;
+}
 .planner-list {
   list-style: none;
   padding: 0;
