@@ -8,6 +8,7 @@ title: Home
 <header>
   <h1>{{ site.title }}</h1>
   <p>{{ site.description }}</p>
+  <a href="{{ '/planner.html' | relative_url }}">Meal Planner &rarr;</a>
 </header>
 
 <main>
