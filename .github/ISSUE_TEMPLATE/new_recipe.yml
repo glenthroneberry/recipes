@@ -1,0 +1,78 @@
+name: New Recipe
+description: Add a new recipe to the site
+title: "New Recipe: "
+labels: ["new-recipe"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fill this out and submit — your recipe will be added to the site automatically within a few minutes!
+  - type: input
+    id: recipe-title
+    attributes:
+      label: Recipe Title
+      placeholder: e.g. Banana Bread
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Breakfast
+        - Lunch
+        - Dinner
+        - Snacks
+        - Dessert
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: prep-time
+    attributes:
+      label: Prep Time
+      placeholder: e.g. 15 min
+  - type: input
+    id: cook-time
+    attributes:
+      label: Cook Time
+      placeholder: e.g. 60 min
+  - type: input
+    id: servings
+    attributes:
+      label: Servings
+      placeholder: e.g. 8
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Optional, separated by commas (e.g. baking, holiday)
+  - type: textarea
+    id: ingredients
+    attributes:
+      label: Ingredients
+      description: >
+        One ingredient per line, in this order: amount, unit, ingredient name.
+        For things you count instead of measure (eggs, bananas), use "whole" as the unit.
+      placeholder: |
+        3, whole, ripe bananas
+        0.33, cup, melted butter
+        1, pinch, salt
+    validations:
+      required: true
+  - type: textarea
+    id: instructions
+    attributes:
+      label: Instructions
+      description: One step per line — they'll be numbered automatically.
+      placeholder: |
+        Preheat oven to 350°F
+        Mix bananas and melted butter in a bowl
+        Bake for 60 minutes
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Optional — tips, substitutions, variations
