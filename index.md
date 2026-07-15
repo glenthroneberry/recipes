@@ -9,6 +9,7 @@ title: Home
   <h1>{{ site.title }}</h1>
   <p>{{ site.description }}</p>
   <a href="{{ '/planner.html' | relative_url }}">Meal Planner &rarr;</a>
+  <a href="{{ site.github_repo_url }}/issues/new?template=new_recipe.yml">+ Add a Recipe</a>
 </header>
 
 <main>
