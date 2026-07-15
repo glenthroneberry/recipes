@@ -1,6 +1,6 @@
 title: My Recipe Book
 description: A collection of recipes I love
-baseurl: ""   # leave blank if using yourname.github.io, else "/reponame"
+baseurl: "/recipes"   # leave blank if using yourname.github.io, else "/reponame"
 url: ""
 
 # Tell Jekyll to treat everything in _recipes as a "recipes" collection
