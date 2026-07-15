@@ -1,6 +1,6 @@
 # My Recipe Book
 
-[![View Site](https://img.shields.io/badge/view-live%20site-orange)](https://glenthroneberry.github.io/Recipes/)
+[![View Site](https://img.shields.io/badge/view-live%20site-orange)](https://glenthroneberry.github.io/recipes/)
 
 A simple Jekyll-based recipe site, built to run on GitHub Pages.
 
