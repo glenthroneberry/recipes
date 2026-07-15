@@ -1,5 +1,6 @@
 ---
 title: Pancakes
+category: Breakfast
 prep_time: 10 min
 cook_time: 15 min
 servings: 4
