@@ -60,34 +60,56 @@
       return;
     }
 
-    var html = '<ul class="planner-list">';
-    recipes.forEach(function (recipe, i) {
-      var mult = selections[recipe.url] || 0;
-      var checkedAttr = mult > 0 ? "checked" : "";
-      html +=
-        '<li class="planner-item" data-index="' + i + '">' +
-        '<label>' +
-        '<input type="checkbox" class="recipe-toggle" data-url="' +
-        escapeAttr(recipe.url) +
-        '" ' +
-        checkedAttr +
-        " />" +
-        '<a href="' + escapeAttr(recipe.url) + '">' + escapeHtml(recipe.title) + "</a>" +
-        "</label>" +
-        '<span class="mult-controls" style="' +
-        (mult > 0 ? "" : "visibility:hidden") +
-        '">' +
-        '<button type="button" class="mult-btn" data-url="' +
-        escapeAttr(recipe.url) +
-        '" data-delta="-1">-</button>' +
-        '<span class="mult-count">' + (mult || 1) + "&times;</span>" +
-        '<button type="button" class="mult-btn" data-url="' +
-        escapeAttr(recipe.url) +
-        '" data-delta="1">+</button>' +
-        "</span>" +
-        "</li>";
+    // group recipes by category, preserving first-seen order,
+    // with uncategorized recipes bucketed under "Other" at the end
+    var groups = {};
+    var order = [];
+    recipes.forEach(function (recipe) {
+      var cat = recipe.category || "Other";
+      if (!groups[cat]) {
+        groups[cat] = [];
+        order.push(cat);
+      }
+      groups[cat].push(recipe);
     });
-    html += "</ul>";
+    if (order.indexOf("Other") !== -1) {
+      order = order.filter(function (c) { return c !== "Other"; });
+      order.push("Other");
+    }
+
+    var html = "";
+    order.forEach(function (cat) {
+      html += '<div class="planner-section"><h3>' + escapeHtml(cat) + "</h3>";
+      html += '<ul class="planner-list">';
+      groups[cat].forEach(function (recipe) {
+        var i = recipes.indexOf(recipe);
+        var mult = selections[recipe.url] || 0;
+        var checkedAttr = mult > 0 ? "checked" : "";
+        html +=
+          '<li class="planner-item" data-index="' + i + '">' +
+          '<label>' +
+          '<input type="checkbox" class="recipe-toggle" data-url="' +
+          escapeAttr(recipe.url) +
+          '" ' +
+          checkedAttr +
+          " />" +
+          '<a href="' + escapeAttr(recipe.url) + '">' + escapeHtml(recipe.title) + "</a>" +
+          "</label>" +
+          '<span class="mult-controls" style="' +
+          (mult > 0 ? "" : "visibility:hidden") +
+          '">' +
+          '<button type="button" class="mult-btn" data-url="' +
+          escapeAttr(recipe.url) +
+          '" data-delta="-1">-</button>' +
+          '<span class="mult-count">' + (mult || 1) + "&times;</span>" +
+          '<button type="button" class="mult-btn" data-url="' +
+          escapeAttr(recipe.url) +
+          '" data-delta="1">+</button>' +
+          "</span>" +
+          "</li>";
+      });
+      html += "</ul></div>";
+    });
     pickerEl.innerHTML = html;
 
     // wire up events
