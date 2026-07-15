@@ -7,7 +7,7 @@ url: ""
 collections:
   recipes:
     output: true
-    permalink: /recipes/:path/
+    permalink: /Recipes/:path/
 
 # Default layout for anything in the recipes collection
 defaults:
