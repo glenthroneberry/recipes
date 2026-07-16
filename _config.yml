@@ -15,8 +15,6 @@ category_order:
   - Lunch
   - Dinner
   - Snacks
-  - Sides
-  - Drinks
   - Dessert
 
 # Tell Jekyll to treat everything in _recipes as a "recipes" collection
