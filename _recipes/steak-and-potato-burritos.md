@@ -20,15 +20,6 @@ ingredients:
   - name: "cheese"
     amount: 1
     unit: "whole"
-  - name: ""
-    amount: 0
-    unit: ""
-  - name: ""
-    amount: 0
-    unit: ""
-  - name: ""
-    amount: 0
-    unit: ""
 ---
 
 ## Instructions
