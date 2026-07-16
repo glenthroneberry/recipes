@@ -5,12 +5,14 @@ title: Home
 
 <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 
-<header>
+<header class="page-header">
   <h1>{{ site.title }}</h1>
   <p>{{ site.description }}</p>
+</header>
+<nav class="site-nav">
   <a href="{{ '/planner.html' | relative_url }}">Meal Planner &rarr;</a>
   <a href="{{ site.github_repo_url }}/issues/new?template=new_recipe.yml">+ Add a Recipe</a>
-</header>
+</nav>
 
 <main>
   {% for cat in site.category_order %}
