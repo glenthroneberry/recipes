@@ -4,6 +4,7 @@ category: Dinner
 prep_time: "5 min"
 cook_time: "30 min"
 servings: 4
+tags: [quick, weeknight]
 ingredients:
   - name: "yellow onion"
     amount: 1
