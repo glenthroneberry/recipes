@@ -15,6 +15,16 @@ title: Home
 </nav>
 
 <main>
+  {% assign all_tags = site.recipes | map: "tags" | flatten | uniq | sort %}
+  {% if all_tags.size > 0 %}
+  <div class="tag-filter">
+    <button class="tag-filter-btn active" data-tag="all">All</button>
+    {% for t in all_tags %}
+    <button class="tag-filter-btn" data-tag="{{ t }}">{{ t }}</button>
+    {% endfor %}
+  </div>
+  {% endif %}
+
   {% for cat in site.category_order %}
     {% assign section = site.recipes | where: "category", cat %}
     {% if section.size > 0 %}
@@ -22,7 +32,7 @@ title: Home
       <h2>{{ cat }}</h2>
       <ul class="recipe-list">
         {% for recipe in section %}
-        <li>
+        <li data-tags="{{ recipe.tags | join: ',' }}">
           <a href="{{ recipe.url | relative_url }}">{{ recipe.title }}</a>
           {% if recipe.tags %}
           <span class="tags">
@@ -43,7 +53,7 @@ title: Home
       <h2>{{ group.name | default: "Other" }}</h2>
       <ul class="recipe-list">
         {% for recipe in group.items %}
-        <li>
+        <li data-tags="{{ recipe.tags | join: ',' }}">
           <a href="{{ recipe.url | relative_url }}">{{ recipe.title }}</a>
           {% if recipe.tags %}
           <span class="tags">
@@ -57,3 +67,5 @@ title: Home
     {% endunless %}
   {% endfor %}
 </main>
+
+<script src="{{ '/assets/filter.js' | relative_url }}"></script>
