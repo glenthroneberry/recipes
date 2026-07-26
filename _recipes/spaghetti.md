@@ -29,9 +29,9 @@ ingredients:
   - name: "garlic powder"
     amount: 1
     unit: "tsp"
-  - name: ""
-    amount: 0
-    unit: ""
+  - name: "Crushed red pepper"
+    amount: 1
+    unit: "To taste"
   - name: "Worcestershire sauce"
     amount: 1
     unit: "Tbs"
