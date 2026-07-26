@@ -1,6 +1,6 @@
 ---
 title: "Asparagus"
-category: Breakfast
+category: Sides
 prep_time: "10 min"
 cook_time: "10 min"
 servings: 4
