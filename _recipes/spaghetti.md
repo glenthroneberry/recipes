@@ -47,6 +47,9 @@ ingredients:
   - name: "fresh basil,optional"
     amount: 1
     unit: "cup"
+  - name: "parmesan cheese"
+    amount: 1
+    unit: "block"
 ---
 
 ## Instructions
